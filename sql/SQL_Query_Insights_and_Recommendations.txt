@@ -1,0 +1,209 @@
+THE STATE OF PERSONAL FINANCE AMONG YOUNG NIGERIAN PROFESSIONALS (2026)
+SQL Queries Insights & Recommendations
+================================================================================
+
+SECTION 1: DEMOGRAPHICS & SEGMENTATION
+--------------------------------------------------------------------------------
+
+Q1a. Distribution by employment type
+Insight: Full-time employees make up the largest share of respondents (35.4%),
+followed by freelancers (21.1%) and self-employed (17.5%) together, non-
+traditional earners (freelance + self-employed + business owner) make up over
+half the sample (51.3%).
+Recommendation: Financial products should be designed with income variability
+in mind, not just standard payroll deduction models as flexible/manual savings
+triggers matter as much as auto-debit for salaried staff.
+
+Q1b. Distribution by income frequency
+Insight: Just over half of respondents (55.5%) earn on a regular weekly/monthly
+salary, while 44.5% have irregular or multiple income streams which shows that a substantial
+minority whose cash flow doesn't fit typical banking products.
+Recommendation: Banks/fintechs should offer income-smoothing tools (e.g.,
+flexible auto-save that adjusts to inflows) rather than fixed-date debit
+products, to serve the irregular-income segment.
+
+Q2. Average income by employment type
+Insight: Freelancers and self-employed respondents report the highest average
+incomes (₦126k and ₦121k), notably higher than full-time employees (₦106k), thereby
+challenging the assumption that formal employment guarantees higher earnings.
+Recommendation: Fintechs shouldn't underweight freelancers/self-employed as a
+target segment for premium products just because they lack a "steady
+paycheck" since their income potential is comparable or higher.
+
+
+SECTION 2: SAVINGS BEHAVIOR
+--------------------------------------------------------------------------------
+
+Q3. Savings bracket distribution
+Insight: Over half of respondents (53.9%) save just 1–10% of their income, and
+only 23.1% save more than 20% whivh shows savings behavior skews low across the sample.
+Recommendation: Product design should focus on nudging respondents from the
+1–10% bracket upward (e.g., gradual round-up savings, gamified savings
+streaks) rather than assuming an all-or-nothing savings habit.
+
+Q4. Income frequency vs. savings rate
+Insight: Respondents with irregular income save at higher rates in the 1–10%
+bracket (59.3%), but are less likely to reach the 21%+ bracket (19.8%)
+compared to those on regular salaries (24.6%) — steady income enables higher-
+tier saving.
+Recommendation: Fintechs targeting gig/freelance earners should prioritize
+consistency-building tools (e.g., income averaging, "pay yourself first"
+auto-transfers) since irregular earners save often but rarely reach high
+savings tiers.
+
+Q5. Average Wellness Score by savings bracket
+Insight: Wellness Score rises with savings rate up to a point as the 11–20%
+bracket has the highest average score (58), while both non-savers (0%, avg 47)
+and the highest savers (21%+, avg 39) score lower, suggesting the top-saving
+group may be sacrificing other wellness dimensions (e.g., no emergency fund,
+no investing) to hit high savings rates.
+Recommendation: Don't market "save more" as a blanket solution but highlight
+balanced financial health (savings + emergency fund + investing together)
+rather than savings rate alone as the goal.
+
+
+SECTION 3: EMERGENCY FUNDS
+--------------------------------------------------------------------------------
+
+Q6. % with an emergency fund
+Insight: 58.1% of respondents have an emergency fund, but that still leaves
+41.9% with over 4 in 10 still exposed to a single income shock.
+Recommendation: Fintechs should position emergency-fund-building as a starter
+product (e.g., auto-save "safety net" tiers) before cross-selling investment
+products to the uncovered 42%.
+
+Q7. Months of expenses covered (among those with a fund)
+Insight: Most funded respondents (67.6%) can cover 3 months or less of
+expenses, and only 10.6% have 6+ months since even those who've "started" an
+emergency fund are thin, not fully buffered.
+Recommendation: Products should nudge existing emergency-fund holders toward
+the 3–6 month benchmark, not just toward opening a fund because coverage depth
+matters as much as having one.
+
+Q8. Emergency fund by employment type
+Insight: Full-time employees have the highest emergency fund coverage
+(67.0%), while unemployed/job-seeking respondents have the lowest by far
+(34.1%) which shows a ~33-point gap tied directly to income stability.
+Recommendation: Target the unemployed/job-seeking and freelancer segments
+with low-barrier, small-amount auto-save products, since traditional "save a
+fixed % monthly" advice doesn't fit their income pattern.
+
+
+SECTION 4: INVESTING
+--------------------------------------------------------------------------------
+
+Q9. % currently investing
+Insight: Only 42.2% of respondents are currently investing, meaning the
+majority (57.8%) have no investment activity at all.
+Recommendation: There's a clear market gap for beginner-friendly, low-minimum
+investment products (e.g., micro-investing apps) targeted at the non-
+investing majority, especially paired with financial literacy nudges.
+
+Q10. Most common investment types (among investors)
+Insight: Stocks lead as the top investment type (20.0% of investors), but the
+remaining money is spread thin across business, real estate, mutual funds,
+and crypto (6–10% each) which shows that no single "default" investment vehicle dominates.
+Recommendation: Investment products targeting this segment should lead with
+stocks/equity access (since that's already familiar) while bundling in easy
+on-ramps to diversify (real estate fractional ownership, mutual fund
+baskets) rather than assuming crypto is the entry point.
+
+Q11. Most common reason for not investing
+Insight: Nearly half of non-investors (47.2%) cite not earning enough as the
+barrier, and a further 27.5% simply "haven't gotten to it together, ~75%
+aren't investing due to income/inertia rather than distrust or lack of
+understanding (only 14.6% cite not understanding it).
+Recommendation: Micro-investing products with very low minimums (e.g.,
+round-ups, ₦500 entry points) will do more to convert this segment than
+investor education campaigns, hence the barrier is access and activation energy,
+not knowledge.
+
+Q12. Investing status by age range and employment type
+Insight: Investing participation is fairly flat across age groups (39.5%–
+48.9%, no clear age trend), but employment type shows a sharp divide which shows self-
+employed (53.7%) and freelancers (46.2%) invest at nearly double the rate of
+the unemployed/job-seeking (22.0%).
+Recommendation: Segment investment product marketing by employment/income
+stability rather than age, since age is not a useful predictor here, but
+employment type is.
+
+
+SECTION 5: BUDGETING & FINANCIAL LITERACY
+--------------------------------------------------------------------------------
+
+Q13. Budgeting confidence overall and by age range
+Insight: Overall budgeting confidence sits low-to-moderate, and confidence
+rises slightly with age since 18–24 year-olds report the lowest confidence
+(3.56), peaking at 30–34 (3.78) before dipping again at 35+ (3.50).
+Recommendation: Target budgeting-confidence tools (guided budgeting
+templates, spend-tracking nudges) specifically at the youngest segment
+(18–24), who represent both the largest respondent group and the least
+confident budgeters.
+
+Q14. Understanding of inflation/compound interest
+Insight: 60.7% of respondents correctly understand both inflation and
+compound interest concepts, but 12.7% understand neither which shows a meaningful
+literacy gap in a sample that's otherwise financially engaged enough to take
+this survey.
+Recommendation: Embed just-in-time financial literacy content (e.g., a
+30-second explainer before opening a savings/investment product) rather than
+assuming baseline literacy and especially for the ~39% who don't fully grasp
+both concepts.
+
+Q15. Financial literacy score by Wellness Score category
+Insight: Financial literacy tracks cleanly with wellness category since Thriving
+respondents average 13.3/15, dropping steadily through Stable (11.6), At
+Risk (10.7), down to Vulnerable (9.3). The gap between Thriving and
+Vulnerable (~4 points) confirms literacy isn't just one input among many, but
+it's also a consistent marker of overall financial health.
+Recommendation: Financial literacy interventions (explainer content, in-app
+nudges on budgeting/inflation concepts) are a legitimate lever for improving
+wellness outcomes, not just a "nice to have", therefore fintechs should treat literacy
+education as core product infrastructure, not an add-on blog post.
+
+
+SECTION 6: OVERALL WELLNESS
+--------------------------------------------------------------------------------
+
+Q16. Distribution across Wellness Score bands
+Insight: The majority of respondents fall into "Vulnerable" (115, ~37%) or
+"At Risk" (114, ~37%) since nearly 3 in 4 young Nigerian professionals are in the
+bottom two wellness bands, while only 12 respondents (~4%) are "Thriving."
+Recommendation: This is the headline stat for the report, therefore lead with it. It
+makes the strongest case to banks/fintechs that there's a large underserved
+market needing foundational financial products, not just premium/investment
+offerings.
+
+Q17. Most common "lowest scoring area"
+Insight: Emergency Fund is the single most common weak spot, cited as the
+lowest-scoring area for 148 respondents, hence it is the largest pain point by far
+compared to other components.
+Recommendation: If a bank/fintech had to pick one product to prioritize for
+this demographic, it should be an emergency-savings tool, because it's the most
+common structural gap, not budgeting or literacy.
+
+Q18. Wellness Score by state/region, employment type, income bracket
+Insight: Wellness Score varies more by income than by geography or job type, it shows
+respondents earning ₦500k–1m average 57.1, more than double those earning
+under ₦100k (40.0); by employment type, self-employed lead (51.7) while
+unemployed/job-seeking trail badly (36.0); state-level results (e.g., Enugu
+at 77.5, n=2) are too thin to be reliable and should be treated as
+directional only.
+Recommendation: Frame wellness gaps primarily around income tier and
+employment stability in the report, theefore flag state-level breakdowns as
+sample-size-limited rather than presenting them as solid regional findings.
+
+
+SECTION 7: GOALS & BEHAVIOR
+-------------------------------------------------------------------------------
+Q19. Most common financial goals
+Insight: "Business" is the dominant stated goal (122 respondents, well ahead
+of Home Ownership at 68 and Debt Freedom at 38). It shows that young Nigerian
+professionals are more oriented toward entrepreneurship/income growth than
+debt payoff or homeownership.
+Recommendation: Fintechs should pair financial wellness products with
+business-funding or business-savings features (e.g., dedicated "business
+goal" savings pots, small business loan pathways) rather than assuming
+mortgage or debt products are the top cross-sell opportunity.
+
+================================================================================
