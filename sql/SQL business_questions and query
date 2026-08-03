@@ -1,0 +1,218 @@
+SELECT * FROM survey_responses;
+
+ALTER TABLE survey_responses
+RENAME COLUMN `Income Frequency` TO income_frequency;
+
+ALTER TABLE survey_responses
+RENAME COLUMN MyUnknownColumn TO response_id;
+
+UPDATE survey_responses
+SET pct_saved = '21%+'
+WHERE pct_saved = '';
+
+UPDATE survey_responses
+SET income = '1m>'
+WHERE pct_saved = '';
+
+
+        #Demographics & segmentation
+	#What's the distribution of respondents by state/region, employment type, and income frequency?
+SELECT state, COUNT(*) AS respondents,
+       ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY state
+ORDER BY respondents DESC;
+
+SELECT employment_type, COUNT(*) AS respondents,
+       ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY employment_type
+ORDER BY respondents DESC;
+
+SELECT income_frequency, COUNT(*) AS respondents,
+       ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY income_frequency
+ORDER BY respondents DESC;
+
+	#How does average income differ across employment types (salaried vs self-employed vs student, etc.)?
+SELECT employment_type, COUNT(*) AS n,
+ROUND(AVG(income), 0) AS avg_income
+FROM survey_responses
+GROUP BY employment_type
+ORDER BY avg_income DESC;
+
+
+		#Savings behavior
+	#What percentage of respondents fall into each savings bracket (0%, 1-10%, etc.)?
+SELECT pct_saved, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY pct_saved
+ORDER BY respondents DESC;
+    
+	#Does income frequency (weekly/monthly/irregular) correlate with how much people save?
+    SELECT pct_saved, income_frequency, COUNT(*) AS respondents
+FROM survey_responses
+GROUP BY pct_saved, income_frequency
+ORDER BY pct_saved, income_frequency;
+    
+	#What's the average Wellness Score by savings bracket?
+SELECT pct_saved, COUNT(*) AS respondents,
+ROUND(AVG(wellness_score), 0) AS avg_ws
+FROM survey_responses
+GROUP BY pct_saved
+ORDER BY avg_ws DESC;
+
+		#Emergency funds
+	#What percentage of respondents have an emergency fund?
+SELECT emergency_fund, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY emergency_fund
+ORDER BY respondents DESC;
+
+	#Among those who do, how many months of expenses does it typically cover?
+SELECT emergency_months, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+WHERE emergency_fund = 'Yes'
+GROUP BY emergency_months
+ORDER BY respondents DESC;
+
+	#Is having an emergency fund correlated with employment type or income level?
+SELECT employment_type, COUNT(*) AS respondents,
+SUM(CASE WHEN emergency_fund = 'Yes' THEN 1 ELSE 0 END) AS has_fund,
+ROUND(100.0 * SUM(CASE WHEN emergency_fund = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_with_fund
+FROM survey_responses
+GROUP BY employment_type
+ORDER BY pct_with_fund
+DESC;
+
+SELECT income, COUNT(*) AS respondents,
+ROUND(100.0 * SUM(CASE WHEN emergency_fund = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_with_fund
+FROM survey_responses
+GROUP BY income
+ORDER BY income
+DESC;
+
+
+		#Investing
+	#What percentage of respondents are currently investing?
+SELECT investment, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+GROUP BY investment
+ORDER BY respondents;
+
+#What are the most common investment types (stocks, mutual funds, crypto, etc.) among those who invest?
+SELECT investment_types, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+WHERE investment = 'Yes'
+GROUP BY investment_types
+ORDER BY respondents DESC;
+
+	#What's the most common reason people give for *not* investing?
+SELECT no_investment_reason_clean, COUNT(*) AS respondents,
+	ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 1) AS pct
+FROM survey_responses
+WHERE investment = 'No'
+GROUP BY no_investment_reason_clean
+ORDER BY respondents DESC;
+
+#Does investing status differ meaningfully by age range or employment type?
+SELECT `Age range`, COUNT(*) AS respondents,
+	ROUND(100.0 * SUM(CASE WHEN investment = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct
+FROM survey_responses
+GROUP BY `Age range`
+ORDER BY `Age range` DESC;
+
+SELECT employment_type, COUNT(*) AS respondents,
+	ROUND(100.0 * SUM(CASE WHEN investment = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct
+FROM survey_responses
+GROUP BY employment_type
+ORDER BY pct DESC;
+
+
+		#Budgeting & financial literacy
+	#What's the average confidence-in-budgeting score, and how does it break down by age range?
+SELECT ROUND(AVG(`Confidence in budgeting`), 2) AS overall_avg_confidence
+FROM survey_responses;
+
+SELECT `Age range` AS age_range,
+       COUNT(*) AS n,
+       ROUND(AVG(`Confidence in budgeting`), 2) AS avg_confidence
+FROM survey_responses
+GROUP BY age_range
+ORDER BY age_range;
+
+	#How many respondents correctly understand inflation/compound interest concepts?
+SELECT inflation_compound_int, COUNT(*) AS respondents,
+  ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER(), 1) AS pct
+FROM survey_responses
+GROUP BY inflation_compound_int
+ORDER BY CASE inflation_compound_int
+WHEN 'Yes, both' THEN 1
+WHEN 'One of them' THEN 2
+WHEN 'Neither' THEN 3
+END;
+
+#Is there a relationship between financial literacy score and Wellness Score category (Thriving/Stable/At Risk/Vulnerable)?
+SELECT category,
+       COUNT(*) AS n,
+       ROUND(AVG(
+         (`Confidence in budgeting` - 1) / 4.0 * 7.5
+         +
+         CASE inflation_compound_int
+           WHEN 'Yes, both' THEN 7.5
+           WHEN 'One of them' THEN 3.75
+           WHEN 'Neither' THEN 0
+         END
+       ), 1) AS avg_literacy_score
+FROM survey_responses
+GROUP BY category
+ORDER BY avg_literacy_score DESC;
+ 
+ 
+		#Overall wellness
+	#What's the distribution of respondents across Wellness Score bands (Thriving, Stable, At Risk, Vulnerable)?
+SELECT category,
+       COUNT(*) AS respondents
+FROM survey_responses
+GROUP BY category
+ORDER BY respondents
+ DESC;
+
+	#What's the most common "lowest scoring area" across all respondents — i.e. where are young Nigerian professionals weakest overall?
+SELECT lowest_area,
+       COUNT(*) AS respondents
+FROM survey_responses
+GROUP BY lowest_area
+ORDER BY respondents DESC
+LIMIT 1;
+
+	#How does average Wellness Score differ by state/region, employment type, and income bracket?
+SELECT state, COUNT(*) AS n, ROUND(AVG(wellness_score), 1) AS avg_wellness_score
+FROM survey_responses
+GROUP BY state
+ORDER BY avg_wellness_score DESC;
+
+SELECT employment_type, COUNT(*) AS n, ROUND(AVG(wellness_score), 1) AS avg_wellness_score
+FROM survey_responses
+GROUP BY employment_type
+ORDER BY avg_wellness_score DESC;
+
+SELECT income, COUNT(*) AS n, ROUND(AVG(wellness_score), 1) AS avg_wellness_score
+FROM survey_responses
+GROUP BY income
+ORDER BY income;
+
+
+		#Goals & behavior
+	#What are the most common financial goals stated by respondents?
+SELECT fin_goal,
+       COUNT(*) AS respondents
+FROM survey_responses
+GROUP BY fin_goal
+ORDER BY respondents DESC;
