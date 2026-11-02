@@ -1,9 +1,9 @@
-[README (5).md](https://github.com/user-attachments/files/30656410/README.5.md)
+[README.md](https://github.com/user-attachments/files/34258079/README.md)
 # The State of Personal Finance Among Young Nigerian Professionals (2026)
 
 A data analytics deep-dive into savings behaviour, emergency-fund coverage, investing habits, budgeting, and financial literacy among young Nigerian professionals — from survey design through to an executive Power BI dashboard.
 
-**[View the Linkedin write up (https://www.linkedin.com/in/oluwabusola-oyenuga/)]** &nbsp;|&nbsp; **[View the dashboard (PDF/screenshots) →](#)**
+**[LinkedIn](https://linkedin.com/in/oluwabusola-oyenuga)** &nbsp;|&nbsp; **[Dashboard screenshots →](dashboard/)** &nbsp;|&nbsp; **[Methodology report →](docs/Methodology_and_Findings_Report.docx)**
 
 ---
 
@@ -26,7 +26,7 @@ Financial fragility is common among young professionals, but it's rarely quantif
 - **Emergency fund coverage peaks at the ₦500k–1m income bracket, then dips for the highest earners** — a non-linear pattern likely tied to irregular/business income at the top end.
 - **Business ownership is the dominant financial goal (39.6%)**, well ahead of home ownership or debt freedom — this is an entrepreneurially-oriented segment.
 
-Full breakdown in the [dashboard](#) and [methodology report](#).
+Full breakdown in the [dashboard](dashboard/) and the [methodology report](docs/Methodology_and_Findings_Report.docx).
 
 ## 🖥️ Dashboard
 
@@ -58,15 +58,18 @@ A 3-page Power BI executive dashboard:
 ```
 ├── data/
 │   ├── raw_survey_responses.csv
-│   ├── cleaned_data.csv
+│   └── cleaned_data.csv
 ├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   └── 02_eda_and_analysis.ipynb
+│   ├── data_cleaning
+│   └── eda_and_analysis.ipynb
 ├── sql/
-│   └── sql_business_questions_and_query.txt
-    SQL_Query_Insights_and_Recommendations
+│   ├── SQL business_questions and query
+│   └── SQL_Query_Insights_and_Recommendations.txt
 ├── dashboard/
-│   └── financial_wellness_dashboard.pbix
+│   ├── Finance of young professionals dashboard.pbix
+│   ├── Executive Overview.png
+│   ├── Segment Deep Dive.png
+│   └── Behaviour and Goals.png
 ├── docs/
 │   └── Methodology_and_Findings_Report.docx
 └── README.md
@@ -81,7 +84,7 @@ A 3-page Power BI executive dashboard:
 - Exploded the multi-select `investment_types` field for accurate per-instrument analysis.
 - Consolidated long-tail free-text reasons into a clean `Other` category without collapsing valid, distinct responses.
 
-Full details in [`docs/Methodology_and_Findings_Report.docx`](#).
+Full details in [`docs/Methodology_and_Findings_Report.docx`](docs/Methodology_and_Findings_Report.docx).
 
 ## 📐 Financial Wellness Score Methodology
 
