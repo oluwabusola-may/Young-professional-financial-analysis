@@ -21,7 +21,7 @@ Financial fragility is common among young professionals, but it's rarely quantif
 - Where does that health break down first — budgeting, saving, emergency funds, investing, or literacy?
 - Does income, employment type, region, or age explain the differences?
 
-**Sample:** 308 respondents (real survey responses collected via Google Forms, supplemented with synthetic data validated to sit within 3–5 percentage points of real-data distributions on key variables).
+**Sample:** 308 respondents (real survey responses collected via Google Forms.
 
 ## 🔑 Key Findings
 
