@@ -1,6 +1,12 @@
 [README.md](https://github.com/user-attachments/files/34258079/README.md)
 # The State of Personal Finance Among Young Nigerian Professionals (2026)
 
+**A 0–100 Financial Wellness Score built from a self-designed survey of 308 young professionals, with Python, SQL and Power BI.**
+
+I designed the survey, automated the scoring, cleaned the data in Python, ran the analysis in SQL, and built a three-page executive dashboard. 74.4% of respondents fall in the "Vulnerable" or "At Risk" bands, and emergency funds are the weakest component.
+
+> **Context:** Incomes are in Nigerian naira (₦). ₦500,000 is about $[X] at the CBN rate on [date]. Respondents are mostly urban professionals in South West Nigeria.
+
 A data analytics deep-dive into savings behaviour, emergency-fund coverage, investing habits, budgeting, and financial literacy among young Nigerian professionals — from survey design through to an executive Power BI dashboard.
 
 **[LinkedIn](https://linkedin.com/in/oluwabusola-oyenuga)** &nbsp;|&nbsp; **[Dashboard screenshots →](dashboard/)** &nbsp;|&nbsp; **[Methodology report →](docs/Methodology_and_Findings_Report.docx)**
