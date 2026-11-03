@@ -5,7 +5,7 @@
 
 I designed the survey, automated the scoring, cleaned the data in Python, ran the analysis in SQL, and built a three-page executive dashboard. 74.4% of respondents fall in the "Vulnerable" or "At Risk" bands, and emergency funds are the weakest component.
 
-> **Context:** Incomes are in Nigerian naira (₦). ₦500,000 is about $[X] at the CBN rate on [date]. Respondents are mostly urban professionals in South West Nigeria.
+> **Context:** Incomes are in Nigerian naira (₦). ₦500,000 is about $380 at the CBN rate on 3rd November 2026. Respondents are mostly urban professionals in South West Nigeria.
 
 A data analytics deep-dive into savings behaviour, emergency-fund coverage, investing habits, budgeting, and financial literacy among young Nigerian professionals — from survey design through to an executive Power BI dashboard.
 
